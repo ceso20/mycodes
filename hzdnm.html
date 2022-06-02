@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <!-- script src="ms.js" type="text/javascript" charset="utf-8"></script-->
+  <script src="https://cdn.jsdelivr.net/gh/ceso20/mycodes/ms.js" type="text/javascript" charset="utf-8"></script>
+  <title>hızlı deneme</title>
+</head>
+<body>
+  <div>
+  <div id="card" title="0">Kağıt</div>
+  <div id="card1" title="1">Taş</div>
+  <div id="card2" title="2">Makas</div></div>
+  
+  <div id="card3">🤨</div><br /><hr />
+  <h1 id="skor" align="center">Hadi Başla</h1>
+  <script type="text/javascript" charset="utf-8">
+   var t = [card, card1, card2];
+      for (let i =0; i < t.length; i++) {
+        xeml(t[i], "background", "gray");
+        xeml(t[i], "display", "block");
+        xeml(t[i], "width", "100px");
+        xeml(t[i], "height", "300px");
+        xeml(t[i], "float", "left");
+        xeml(t[i], "text-align", "center");
+        xeml(t[i], "line-height", "250px");
+        xeml(t[i], "border", "2px solid black");
+        xeml(t[i], "color", "white");
+      }
+      
+        
+      function xeml3(){
+        xeml(card3, "background", "green");
+        xeml(card3, "display", "block");
+        xeml(card3, "width", "300px");
+        xeml(card3, "height", "300px");
+        xeml(card3, "float", "left");
+        xeml(card3, "text-align", "center");
+        xeml(card3, "line-height", "250px");
+        xeml(card3, "border", "10px solid black");
+        xeml(card3, "color", "white");
+        xeml(card3, "font-size", "30px");
+        xeml(card3, "margin-left", "300px");
+        xeml(card3, "float", "right");
+      }
+      xeml3();
+      
+      setInterval(function(){
+        card3.innerHTML ="🤔 Düşünüyor..."
+      }, 3000);
+      
+   t.forEach((e) => {
+     e.onclick = function(){
+       denet(e.innerHTML, e);
+     }
+   });
+   
+   var bens = 0, bils = 0; 
+   function denet(ben, e){
+     if(bens == 3 || bils == 3){
+        alert("kazanan ")
+     } else {
+     var et = e.title;
+     var rkm = parseInt(Math.random(0)*3);
+     var bil = t[rkm].innerHTML;
+     card3.innerHTML = bil;
+     // 0 = kağıt 1 = taş 2 = makas
+     switch (et - rkm) {
+       case (-1):
+       bens++;
+       xeml(e, "background", "lightgreen");
+         break;
+       case (2):
+       bens++;
+       xeml(e, "background", "lightgreen");
+         break;
+       case (1):
+       bils++;
+       xeml(e, "background", "red");
+         break;
+       case (-2):
+       bils++;
+       xeml(e, "background", "red");
+         break;
+       
+       default:
+         alert("Tekrar")
+     }
+     skor.innerHTML = "Ben : "+bens +"<br> VS <br>Bilgisayar : "+bils;
+     setTimeout(function() {
+       card3.innerHTML = "🤔 Düşünüyor... "
+        xeml(e,"background", "gray");
+     }, 2000);
+     } 
+   }
+   
+
+   
+  </script>
+</body>
+</html>
