@@ -39,7 +39,7 @@ function xok(type, text, repeat = 1) {
 
   }
 
-// xemka wê dıde
+// xemla wê dıde
   function xemlçı(id, styleName) {
     return " " + window.getComputedStyle(id).getPropertyValue(styleName);
   }
@@ -73,4 +73,14 @@ function fxandın(fileName){
 
 function ftemız(fileName){
   return localStorage.removeItem(fileName);
+}
+
+// fonqsyone nvisa
+function hevva(text){
+  var mtn =""
+  var arr = text.split(" ")
+  arr.forEach((e) => {
+    mtn+=e
+  })
+  return mtn.
 }
