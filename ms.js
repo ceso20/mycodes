@@ -82,5 +82,5 @@ function hevva(text){
   arr.forEach((e) => {
     mtn+=e
   })
-  return mtn.
+  return mtn
 }
